@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import PropTypes from "prop-types";
@@ -12,8 +10,9 @@ import red from "@material-ui/core/colors/red";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { withTheme } from "@material-ui/core/styles";
+import "./styles.css";
 
-const UPDATE_RATE = 15; // In Minutes
+const UPDATE_RATE = 5; // In Minutes
 
 const urls = [
   "https://eu.api.battle.net/data/wow/token/?namespace=dynamic-eu&locale=en_GB&access_token=zx79b5na62gv533945snnpeg",
@@ -31,7 +30,7 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
-    marginBottom: theme.spacing.unit
+    marginBottom: theme.spacing.unit * 2
   },
   card: {
     maxWidth: 400
@@ -148,12 +147,13 @@ class MyCard extends Component {
             </Typography>
             <Typography gutterBottom component="p">
               {!this.state.remaining
-                ? "Updated every" + UPDATE_RATE + " minutes."
-                : "Updated every" +
+                ? "Updated every " + UPDATE_RATE + " minutes."
+                : "Updated every " +
                   UPDATE_RATE +
                   " minutes. Next update in " +
                   this.state.remaining}
             </Typography>
+            <br />
 
             <Paper className={classes.root} elevation={1}>
               {loadingEU
@@ -185,14 +185,14 @@ class MyCard extends Component {
             </Paper>
           </CardContent>
 
-          <CardActions>
+          {/* <CardActions>
             <Button size="small" color="primary">
               Share
             </Button>
             <Button size="small" color="primary">
               Learn More
             </Button>
-          </CardActions>
+          </CardActions> */}
         </Card>
       </div>
     );
