@@ -11,8 +11,12 @@ h1 {
 
 #refresh {
   cursor: pointer;
-  color: darkslategray;
+  color: lightslategray;
   animation: rot 20s linear infinite;
+}
+
+#refresh:hover {
+  color: limegreen;
 }
 
 #refresh:active {
