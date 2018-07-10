@@ -10,6 +10,7 @@ import red from "@material-ui/core/colors/red";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { withTheme } from "@material-ui/core/styles";
+import Refresh from "@material-ui/icons/Refresh";
 import "./styles.css";
 
 const UPDATE_RATE = 5; // In Minutes
@@ -57,6 +58,10 @@ const styles = theme => ({
   },
   progress: {
     margin: theme.spacing.unit
+  },
+  icon: {
+    margin: theme.spacing.unit,
+    fontSize: 24
   }
 });
 
@@ -84,6 +89,10 @@ class MyCard extends Component {
     let seconds = rem.getSeconds();
     let result = minutes + "m " + seconds + "s ";
     this.setState({ remaining: result });
+  };
+
+  handleRefresh = () => {
+    this.fetchPrices();
   };
 
   fetchPrices = () => {
@@ -142,8 +151,13 @@ class MyCard extends Component {
             title="Contemplative Reptile"
           />
           <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">
-              WoW Token Prices
+            <Typography gutterBottom variant="display1" component="h1">
+              WoW Token Prices{" "}
+              <Refresh
+                id="refresh"
+                className={classes.icon}
+                onClick={this.handleRefresh}
+              />
             </Typography>
             <Typography gutterBottom component="p">
               {!this.state.remaining

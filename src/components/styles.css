@@ -4,3 +4,27 @@ body {
   overflow: hidden;
   padding: 20px;
 }
+
+h1 {
+  color: red;
+}
+
+#refresh {
+  cursor: pointer;
+  color: darkslategray;
+  animation: rot 20s linear infinite;
+}
+
+#refresh:active {
+  color: limegreen;
+  animation: rot .5s linear infinite;
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
