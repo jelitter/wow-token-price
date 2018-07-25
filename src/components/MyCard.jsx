@@ -16,8 +16,8 @@ import "./styles.css";
 const UPDATE_RATE = 5; // In Minutes
 
 const urls = [
-  "https://eu.api.battle.net/data/wow/token/?namespace=dynamic-eu&locale=en_GB&access_token=zx79b5na62gv533945snnpeg",
-  "https://us.api.battle.net/data/wow/token/?namespace=dynamic-us&locale=en_US&access_token=zx79b5na62gv533945snnpeg"
+  "https://eu.api.battle.net/data/wow/token/?namespace=dynamic-eu&locale=en_GB&access_token=API_KEY_HERE",
+  "https://us.api.battle.net/data/wow/token/?namespace=dynamic-us&locale=en_US&access_token=API_KEY_HERE"
 ];
 
 const theme = createMuiTheme({
